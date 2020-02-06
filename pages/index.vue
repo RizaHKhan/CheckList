@@ -26,6 +26,8 @@ export default {
 <style scoped>
   h1 {
     text-align: center;
+    font-weight: 400;
+    margin: 10px 0;
   }
 
   .list ul {
@@ -48,5 +50,23 @@ export default {
   .list-item {
     display: flex;
     justify-content: space-between;
+  }
+
+  .list-item p {
+    margin: auto 0;
+  }
+
+  .list-item a {
+    text-decoration: none;
+    background: rgba(0, 144, 193, 1);
+    padding: 5px;
+    border-radius: 5px;
+    transition: all .5s ease;
+    color: black;
+    font-weight: 400;
+  }
+
+  .list-item a:hover {
+    color: white;
   }
 </style>
