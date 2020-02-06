@@ -9,9 +9,9 @@
     </div>
     <div class="list">
       <ul>
-        <li class="list-item"><p>Feed the dog</p><a href="#">Delete</a></li>
-        <li class="list-item"><p>Buy Food</p><a href="#">Delete</a></li>
-        <li class="list-item"><p>Buy Food and do other things</p><a href="#">Delete</a></li>
+        <li class="list-item">
+          <p>Feed the dog</p><a href="#">Delete</a>
+        </li>
       </ul>
     </div>
   </div>

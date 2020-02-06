@@ -35,3 +35,5 @@ $color2: rgba(56, 174, 204, 1);
 $color3: rgba(0, 144, 193, 1);
 $color4: rgba(24, 52, 70, 1);
 $color5: rgba(34, 85, 96, 1);
+
+mongo "mongodb+srv://to-do-list-s6ku5.mongodb.net/test" --username mastaraz
