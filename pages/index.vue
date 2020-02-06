@@ -3,14 +3,14 @@
     <h1>Checklist</h1>
     <div class="add">
       <form action="#">
-        <input type="text">
-        <input type="submit" value="Add Task">
+        <input type="text" v-model="task.description">
+        <input type="submit" value="Add Task" @click="addTasks(task)">
       </form>
     </div>
     <div class="list">
-      <ul>
-        <li class="list-item">
-          <p>Feed the dog</p><a href="#">Delete</a>
+      <ul v-if="getTasks">
+        <li class="list-item" v-for="{description, id} in getTasks" v-bind:key='id'>
+          <p>{{ description }}</p><button>Delete</button>
         </li>
       </ul>
     </div>
@@ -18,8 +18,29 @@
 </template>
 
 <script>
-export default {
+import { mapActions, mapGetters } from 'vuex'
 
+export default {
+  data () {
+    return {
+      task: {
+        description: 'Eat breakfast'
+      }
+    }
+  },
+  computed: {
+    ...mapGetters({
+      getTasks: 'tasks/getTasks'
+    })
+  },
+  created () {
+    this.$store.dispatch('tasks/getTasks')
+  },
+  methods: {
+    ...mapActions({
+      addTasks: 'tasks/addTasks'
+    })
+  }
 }
 </script>
 
@@ -56,7 +77,8 @@ export default {
     margin: auto 0;
   }
 
-  .list-item a {
+  .list-item button {
+    border: 0;
     text-decoration: none;
     background: rgba(0, 144, 193, 1);
     padding: 5px;
@@ -66,7 +88,7 @@ export default {
     font-weight: 400;
   }
 
-  .list-item a:hover {
+  .list-item button:hover {
     color: white;
   }
 </style>

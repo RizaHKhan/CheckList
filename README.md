@@ -36,4 +36,12 @@ $color3: rgba(0, 144, 193, 1);
 $color4: rgba(24, 52, 70, 1);
 $color5: rgba(34, 85, 96, 1);
 
+
+Feb 6th
+1. Create a store file
+2. Connect to the back end
+
 mongo "mongodb+srv://to-do-list-s6ku5.mongodb.net/test" --username mastaraz
+
+
+
