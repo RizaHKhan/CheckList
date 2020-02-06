@@ -1,8 +1,12 @@
+const config = require('../nuxt.config.js')
+const router = require('./router')
+const cors = require('cors')
 const express = require('express')
 const consola = require('consola')
 const { Nuxt, Builder } = require('nuxt')
 const mongoose = require('mongoose')
 const app = express()
+require('dotenv').config({ path: __dirname + '/.env' })
 
 mongoose.connect('', { useNewUrlParser: true })
 const db = mongoose.connection
@@ -11,7 +15,6 @@ db.once('open', function () {
   console.log('Connection Established')
 })
 
-const router = require('./router')
 app.use('/crud', router)
 
 app.use(express.urlencoded({ extended: true }))
@@ -19,7 +22,6 @@ app.use(express.json())
 app.use(cors())
 
 // Import and Set Nuxt.js options
-const config = require('../nuxt.config.js')
 config.dev = process.env.NODE_ENV !== 'production'
 
 async function start () {
