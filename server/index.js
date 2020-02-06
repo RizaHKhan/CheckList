@@ -8,7 +8,7 @@ const mongoose = require('mongoose')
 const app = express()
 require('dotenv').config({ path: __dirname + '/.env' })
 
-mongoose.connect('', { useNewUrlParser: true })
+mongoose.connect(process.env.DB, { useNewUrlParser: true })
 const db = mongoose.connection
 db.on('error', console.error.bind(console, 'connection error:'))
 db.once('open', function () {

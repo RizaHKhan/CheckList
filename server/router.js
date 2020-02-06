@@ -4,4 +4,4 @@ const router = express.Router()
 
 router.get('/tasks', controller.getTasks)
 
-module.export = router
+module.exports = router
