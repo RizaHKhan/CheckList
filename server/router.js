@@ -2,6 +2,7 @@ const controller = require('./controller')
 const express = require('express')
 const router = express.Router()
 
-router.get('/tasks', controller.getTasks)
+router.get('/getTasks', controller.getTasks)
+router.post('/addTasks', controller.addTasks)
 
 module.exports = router
