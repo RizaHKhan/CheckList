@@ -1,12 +1,12 @@
 # checklist
 
 1. Create Front Page
-    -. Picked Colors
-    -. Pick Font
-    a. Title
-    b. List Area
-    c. Input for adding List
-    d. All buttons
+    -. Picked Colors x
+    -. Pick Font x
+    a. Title x
+    b. List Area x
+    c. Input for adding List x
+    d. All buttons x
 2. Create Back-end
     -. Create Mongoose Schema
     a. Adding Task

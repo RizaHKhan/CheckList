@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="main-container">
     <nuxt />
   </div>
 </template>
@@ -27,4 +27,19 @@ body {
   background: #38aecc;
 }
 
+#__nuxt {
+  width: 100%;
+  height: 100%;
+}
+
+#__layout {
+  height: 100vh;
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+
+.main-container {
+  margin: auto;
+}
 </style>

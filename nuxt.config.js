@@ -13,7 +13,7 @@ module.exports = {
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
-      { href="https://fonts.googleapis.com/css?family=Roboto:100,300,300i,400,400i,500,500i,700,900&display=swap", rel="stylesheet" }
+      { href: 'https://fonts.googleapis.com/css?family=Roboto:100,300,300i,400,400i,500,500i,700,900&display=swap', rel: 'stylesheet' }
     ]
   },
   /*
@@ -24,6 +24,7 @@ module.exports = {
   ** Global CSS
   */
   css: [
+    '@/assets/css/style.css'
   ],
   /*
   ** Plugins to load before mounting the App
