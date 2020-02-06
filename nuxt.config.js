@@ -12,7 +12,8 @@ module.exports = {
       { hid: 'description', name: 'description', content: process.env.npm_package_description || '' }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      { href="https://fonts.googleapis.com/css?family=Roboto:100,300,300i,400,400i,500,500i,700,900&display=swap", rel="stylesheet" }
     ]
   },
   /*
@@ -48,6 +49,7 @@ module.exports = {
   ** See https://axios.nuxtjs.org/options
   */
   axios: {
+    baseUrl: 'http://localhost:3000/'
   },
   /*
   ** Build configuration
