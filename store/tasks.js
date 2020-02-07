@@ -10,17 +10,20 @@ export const getters = {
 
 export const mutations = {
   getTasks (state, tasks) {
-    Object.values(tasks).forEach((task) => {
-      state.tasks.push(task)
-    })
-    console.log(state.tasks)
+    if (tasks.length) {
+      Object.values(tasks).forEach((task) => {
+        state.tasks.push(task)
+      })
+    } else {
+      state.tasks = []
+    }
   }
 }
 
 export const actions = {
   async addTasks (ctx, payload) {
     try {
-      await axios.post('/crud/addTasks', payload)
+      await axios.post('http://localhost:3000/crud/addTasks', payload)
       console.log('Items added')
     } catch (err) {
       console.log(err)
@@ -28,7 +31,8 @@ export const actions = {
   },
   async getTasks (ctx) {
     try {
-      const tasks = await axios.get('/crud/getTasks')
+      ctx.commit('getTasks', '')
+      const tasks = await axios.get('http://localhost:3000/crud/getTasks')
       ctx.commit('getTasks', tasks.data)
     } catch (err) {
       console.log(err)

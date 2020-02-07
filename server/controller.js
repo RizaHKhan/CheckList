@@ -11,7 +11,8 @@ exports.getTasks = async (req, res) => {
 
 exports.addTasks = async (req, res) => {
   try {
-    await Task.create(req.body)
+    const task = await Task.create(req.body)
+    res.send(task)
   } catch (err) {
     console.log(err)
   }

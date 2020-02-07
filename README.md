@@ -8,7 +8,7 @@
     c. Input for adding List x
     d. All buttons x
 2. Create Back-end
-    -. Create Mongoose Schema
+    -. Create Mongoose Schema x
     a. Adding Task
     b. Deleting Task
     c. Adjusting Task
@@ -36,12 +36,19 @@ $color3: rgba(0, 144, 193, 1);
 $color4: rgba(24, 52, 70, 1);
 $color5: rgba(34, 85, 96, 1);
 
+Nice to haves:
 
-Feb 6th
-1. Create a store file
-2. Connect to the back end
+A day starts with tasks to complete. In order to reduce the cognitive stress on the brain a checklist makes for a great method.
 
-mongo "mongodb+srv://to-do-list-s6ku5.mongodb.net/test" --username mastaraz
+Therefore, an application that makes that process of creating a checklist easy, intuitive and 'fun' is essential. Yes, a notepad would do the trick. But a notepad cannot return the benefits of a well crafted program that could, perhaps send an email reminder. Perhaps you want to add tasks not just for the day, but also for the week, the month and maybe the year?
 
+What about categorizing the tasks?
 
+How about adding a time table for the tasks? For example, start and stop a timer? The time is measured and stored.
+
+A database can be accumulated on how long a particular category of tasks took? 
+
+The ability to add categories for a task
+
+The Schema of the task:
 
