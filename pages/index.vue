@@ -9,8 +9,8 @@
     </div>
     <div class="list">
       <ul v-if="getTasks">
-        <li class="list-item" v-for="{description, id} in getTasks" v-bind:key='id'>
-          <p>{{ description }}</p><button>Delete</button>
+        <li class="list-item" v-for="{description, _id} in getTasks" v-bind:key='_id'>
+          <p>{{ description }}</p><button @click="deleteTask(_id)">Delete</button>
         </li>
       </ul>
     </div>
@@ -38,7 +38,8 @@ export default {
   },
   methods: {
     ...mapActions({
-      addTasks: 'tasks/addTasks'
+      addTasks: 'tasks/addTasks',
+      deleteTask: 'tasks/deleteTask'
     })
   }
 }

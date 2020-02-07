@@ -24,7 +24,7 @@ export const actions = {
   async addTasks (ctx, payload) {
     try {
       await axios.post('http://localhost:3000/crud/addTasks', payload)
-      console.log('Items added')
+      ctx.dispatch('getTasks')
     } catch (err) {
       console.log(err)
     }
@@ -34,6 +34,14 @@ export const actions = {
       ctx.commit('getTasks', '')
       const tasks = await axios.get('http://localhost:3000/crud/getTasks')
       ctx.commit('getTasks', tasks.data)
+    } catch (err) {
+      console.log(err)
+    }
+  },
+  async deleteTask (ctx, id) {
+    try {
+      await axios.post('http://localhost:3000/crud/deleteTask', { id })
+      ctx.dispatch('getTasks')
     } catch (err) {
       console.log(err)
     }

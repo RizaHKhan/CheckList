@@ -17,3 +17,12 @@ exports.addTasks = async (req, res) => {
     console.log(err)
   }
 }
+
+exports.deleteTask = async (req, res) => {
+  try {
+    await Task.deleteOne({ _id: req.body.id })
+    res.send()
+  } catch (err) {
+    console.log(err)
+  }
+}
