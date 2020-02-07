@@ -45,5 +45,13 @@ export const actions = {
     } catch (err) {
       console.log(err)
     }
+  },
+  updateTask (ctx, task) {
+    try {
+      axios.post('http://localhost:3000/crud/updateTask', { task })
+      ctx.dispatch('getTasks')
+    } catch (err) {
+      console.log(err)
+    }
   }
 }

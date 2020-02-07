@@ -26,3 +26,12 @@ exports.deleteTask = async (req, res) => {
     console.log(err)
   }
 }
+
+exports.updateTask = async (req, res) => {
+  try {
+    await Task.findByIdAndUpdate({ _id: req.body.task._id }, { description: req.body.task.description })
+    res.send()
+  } catch (err) {
+    console.log(err)
+  }
+}
