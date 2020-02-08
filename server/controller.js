@@ -1,3 +1,6 @@
+const mongoose = require('mongoose')
+require('mongoose').set('debug', true)
+
 const Task = require('./Task')
 
 exports.getTasks = async (req, res) => {
@@ -29,7 +32,10 @@ exports.deleteTask = async (req, res) => {
 
 exports.updateTask = async (req, res) => {
   try {
-    await Task.findByIdAndUpdate({ _id: req.body.task._id }, { description: req.body.task.description })
+    console.log(req.body)
+    const ObjectId = mongoose.Types.ObjectId(req.body.task._id)
+    const task = await Task.updateOne({ _id: ObjectId }, { description: req.body.task.description })
+    console.log(task)
     res.send()
   } catch (err) {
     console.log(err)

@@ -10,7 +10,7 @@
     <div class="list">
       <ul v-if="getTasks">
         <li class="list-item" v-for="{description, _id} in getTasks" v-bind:key='_id'>
-          <p v-if="show != _id">{{ description }}</p><input v-if="show === _id" type="text" v-model="description">
+          <p v-if="show != _id">{{ description }}</p><input v-if="show === _id" :value="description" type="text">
           <button @click="deleteTask(_id)">Delete</button>
           <button class="edit" @click="show = _id" v-if="show != _id">Edit</button>
           <button class="update" v-if="show === _id" @click="update({_id, description})">Update</button>
@@ -29,7 +29,6 @@ export default {
       task: {
         description: ''
       },
-      newDesc: '',
       show: null
     }
   },
@@ -44,10 +43,10 @@ export default {
   methods: {
     ...mapActions({
       addTasks: 'tasks/addTasks',
-      deleteTask: 'tasks/deleteTask',
+      deleteTask: 'tasks/deleteTask'
     }),
-    update (cart) {
-      this.$store.dispatch('updateTask', { cart })
+    update (task) {
+      this.$store.dispatch('tasks/updateTask', task)
       this.show = null
     }
   }

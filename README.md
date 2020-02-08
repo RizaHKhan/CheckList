@@ -46,7 +46,7 @@ What about categorizing the tasks?
 
 How about adding a time table for the tasks? For example, start and stop a timer? The time is measured and stored.
 
-A database can be accumulated on how long a particular category of tasks took? 
+A database can be accumulated on how long a particular category of tasks took?
 
 The ability to add categories for a task
 
