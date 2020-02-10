@@ -51,4 +51,5 @@ A database can be accumulated on how long a particular category of tasks took?
 The ability to add categories for a task
 
 The Schema of the task:
+
 mongo "mongodb+srv://to-do-list-s6ku5.mongodb.net/test" --username mastaraz

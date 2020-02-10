@@ -32,10 +32,8 @@ exports.deleteTask = async (req, res) => {
 
 exports.updateTask = async (req, res) => {
   try {
-    console.log(req.body)
     const ObjectId = mongoose.Types.ObjectId(req.body.task._id)
-    const task = await Task.updateOne({ _id: ObjectId }, { description: req.body.task.description })
-    console.log(task)
+    await Task.updateOne({ _id: ObjectId }, { description: req.body.task.newDesc })
     res.send()
   } catch (err) {
     console.log(err)

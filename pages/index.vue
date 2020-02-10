@@ -10,10 +10,32 @@
     <div class="list">
       <ul v-if="getTasks">
         <li class="list-item" v-for="{description, _id} in getTasks" v-bind:key='_id'>
-          <p v-if="show != _id">{{ description }}</p><input v-if="show === _id" :value="description" type="text">
-          <button @click="deleteTask(_id)">Delete</button>
-          <button class="edit" @click="show = _id" v-if="show != _id">Edit</button>
-          <button class="update" v-if="show === _id" @click="update({_id, description})">Update</button>
+          <p v-if="show != _id">{{ description }}</p><input v-if="show === _id" v-model="newDesc" type="text">
+          <button
+            @click="deleteTask(_id)">
+            Delete
+          </button>
+          <button
+            @click="show = _id"
+            v-if="show != _id"
+            class="edit"
+          >
+            Edit
+          </button>
+          <button
+            v-if="show === _id"
+            @click="update({_id, newDesc})"
+            class="update"
+          >
+            Update
+          </button>
+          <button
+            v-if="show === _id"
+            @click="show = !show"
+            class="update"
+          >
+            Cancel
+          </button>
         </li>
       </ul>
     </div>
@@ -29,6 +51,7 @@ export default {
       task: {
         description: ''
       },
+      newDesc: '',
       show: null
     }
   },
@@ -48,6 +71,7 @@ export default {
     update (task) {
       this.$store.dispatch('tasks/updateTask', task)
       this.show = null
+      this.newDesc = ''
     }
   }
 }
