@@ -1,16 +1,18 @@
 <template>
   <div class="index">
-    <h1>Todos</h1>
+    <CreateTask />
     <TaskList :tasks="tasks" />
   </div>
 </template>
 
 <script>
 import TaskList from '@/components/Tasks/TaskList'
+import CreateTask from '@/components/Tasks/CreateTask'
 import { mapGetters } from 'vuex'
 export default {
   components: {
-    TaskList
+    TaskList,
+    CreateTask
   },
   computed: {
     ...mapGetters({

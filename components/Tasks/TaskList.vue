@@ -1,5 +1,5 @@
 <template>
-  <div class="list">
+  <div v-if="tasks" class="list">
     <Task v-for="task in tasks" v-bind:key="task._id" :task="task" />
   </div>
 </template>

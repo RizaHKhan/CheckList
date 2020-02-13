@@ -27,4 +27,8 @@
   &--edit {
     background: green;
   }
+
+  &--create {
+    background: $yellow;
+  }
 }

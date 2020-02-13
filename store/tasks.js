@@ -23,7 +23,7 @@ export const mutations = {
 export const actions = {
   async addTasks (ctx, payload) {
     try {
-      await axios.post('http://localhost:3000/crud/addTasks', payload)
+      await axios.post('http://localhost:3000/crud/addTasks', { description: payload })
       ctx.dispatch('getTasks')
     } catch (err) {
       console.log(err)
