@@ -18,12 +18,24 @@
 .main-container {
   width: 100%;
   display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
 
   &--header {
+    grid-column: 1 / -1;
     border: solid 1px red;
   }
 
   &--footer {
+    grid-column: 1 / -1;
     border: solid 1px blue;
+  }
+}
+
+.task {
+  display: grid;
+  grid-auto-flow: column;
+
+  &__description {
+    margin: auto 0;
   }
 }

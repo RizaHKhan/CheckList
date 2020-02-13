@@ -1,9 +1,9 @@
 <template>
   <button
     @click="deleteTask(id)"
-    class="button button__delete"
+    class="button button--update"
   >
-    Delete
+    Update
   </button>
 </template>
 
