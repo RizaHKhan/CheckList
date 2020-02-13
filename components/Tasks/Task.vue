@@ -1,14 +1,18 @@
 <template>
   <div class="task">
-    {{ task.description }}
+    {{ task.description }}<DeleteButton :id="task._id" />
   </div>
 </template>
 
 <script>
+import DeleteButton from '@/components/Buttons/DeleteButton'
 export default {
+  components: {
+    DeleteButton
+  },
   props: {
     task: {
-      type: String,
+      type: Object,
       required: true
     }
   }
