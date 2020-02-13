@@ -8,26 +8,40 @@
     </h4>
     <UpdateTask
       v-else
+      :description="task.description"
     />
     <DeleteButton
+      v-if="show"
       :id="task._id"
     />
     <UpdateButton
+      v-if="show"
+      v-on:showInput="showInput"
       :id="task._id"
-      @click="show = !show"
+    />
+    <CancelUpdateButton
+      v-if="!show"
+      v-on:cancelUpdate="showInput"
+    />
+    <ApproveUpdateButton
+      v-if="!show"
     />
   </div>
 </template>
 
 <script>
-import DeleteButton from '@/components/Buttons/DeleteButton'
-import UpdateButton from '@/components/Buttons/UpdateButton'
+import DeleteButton from '@/components/TaskButtons/DeleteButton'
+import UpdateButton from '@/components/TaskButtons/UpdateButton'
+import CancelUpdateButton from '@/components/TaskButtons/CancelUpdateButton'
+import ApproveUpdateButton from '@/components/TaskButtons/ApproveUpdateButton'
 import UpdateTask from '@/components/Tasks/UpdateTask'
 export default {
   components: {
     DeleteButton,
     UpdateButton,
-    UpdateTask
+    UpdateTask,
+    CancelUpdateButton,
+    ApproveUpdateButton
   },
   props: {
     task: {
@@ -38,6 +52,11 @@ export default {
   data () {
     return {
       show: true
+    }
+  },
+  methods: {
+    showInput () {
+      this.show = !this.show
     }
   }
 }

@@ -20,20 +20,19 @@
     color: white;
   }
 
-  &--delete {
-    background: red;
+  &--danger {
+    background: $danger;
   }
 
-  &--edit {
-    background: green;
+  &--success {
+    background: $success;
   }
 
-  &--create {
-    background: $yellow;
+  &--secondary {
+    background: $secondary;
   }
 
-
-  &--update {
-    background: yellow;
+  &--primary {
+    background: $primary;
   }
 }
