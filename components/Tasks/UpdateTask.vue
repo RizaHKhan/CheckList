@@ -1,6 +1,9 @@
 <template>
   <div class="adjust">
-    <input type="text" :value="description">
+    <input
+      :value="description"
+      type="text"
+    >
   </div>
 </template>
 

@@ -1,6 +1,5 @@
 <template>
   <button
-    @click="deleteTask(id)"
     class="button button--update"
   >
     Update

@@ -5,7 +5,7 @@
       type="text"
     >
     <button
-      @click="addTasks(task)"
+      @click="addTaskMethod"
       class="button button--create"
     >
       Create Task
@@ -14,7 +14,6 @@
 </template>
 
 <script>
-import { mapActions } from 'vuex'
 export default {
   data () {
     return {
@@ -22,9 +21,10 @@ export default {
     }
   },
   methods: {
-    ...mapActions({
-      addTasks: 'tasks/addTasks'
-    })
+    addTaskMethod () {
+      this.$store.dispatch('tasks/addTasks', this.task)
+      this.task = ''
+    }
   }
 }
 </script>
