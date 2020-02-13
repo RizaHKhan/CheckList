@@ -1,0 +1,13 @@
+$breakpoints: (
+  small: 0px,
+  medium: 640px,
+  large: 960px,
+  xlarge: 1280px
+);
+
+.main-content {
+  max-width: 1600px;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+}
