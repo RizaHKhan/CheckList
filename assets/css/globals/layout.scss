@@ -19,15 +19,29 @@
   width: 100%;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 100px 1fr 100px;
 
   &--header {
     grid-column: 1 / -1;
-    border: solid 1px red;
   }
 
   &--footer {
     grid-column: 1 / -1;
-    border: solid 1px blue;
+  }
+}
+
+.create {
+  margin: 0 0 10px 0;
+  display: grid;
+  grid-auto-flow: column;
+  width: 100%;
+
+  .input {
+    width: 100%;
+  }
+
+  .button {
+    margin: auto 0 auto auto;
   }
 }
 
@@ -39,8 +53,28 @@
 .task {
   display: grid;
   grid-auto-flow: column;
+  grid-template-columns: 1fr auto;
+  justify-content: space-between;
 
   &__description {
     margin: auto 0;
+  }
+
+  &__buttons {
+    margin: auto 0 auto auto;
+  }
+}
+
+.update {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+
+  .input {
+    width: 70%;
+  }
+
+  .button {
+    margin: 0 5px 0 0;
   }
 }

@@ -3,10 +3,12 @@
     <input
       v-model="task"
       type="text"
+      class="input input--create"
+      placeholder="Add Task Here"
     >
     <button
       @click="addTaskMethod"
-      class="button button--create"
+      class="button button--success"
     >
       Create Task
     </button>

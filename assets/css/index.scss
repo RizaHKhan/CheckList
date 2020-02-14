@@ -10,6 +10,11 @@
 @import "globals/body.scss";
 @import "globals/layout.scss";
 @import "globals/fontSize.scss";
+@import "globals/inputs.scss";
 
 // Settings
 @import "settings/foundation.scss";
+
+// Sections
+@import "sections/header.scss";
+@import "sections/footer.scss";

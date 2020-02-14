@@ -10,19 +10,21 @@
       v-else
       :task="task"
     />
-    <DeleteButton
-      v-if="show"
-      :id="task._id"
-    />
-    <UpdateButton
-      v-on:showInput="showInput"
-      v-if="show"
-      :id="task._id"
-    />
-    <CancelUpdateButton
-      v-if="!show"
-      v-on:cancelUpdate="showInput"
-    />
+    <div class="task__buttons">
+      <DeleteButton
+        v-if="show"
+        :id="task._id"
+      />
+      <UpdateButton
+        v-on:showInput="showInput"
+        v-if="show"
+        :id="task._id"
+      />
+      <CancelUpdateButton
+        v-if="!show"
+        v-on:cancelUpdate="showInput"
+      />
+    </div>
   </div>
 </template>
 

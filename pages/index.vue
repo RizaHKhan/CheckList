@@ -1,7 +1,18 @@
 <template>
-  <div class="index">
-    <CreateTask />
-    <TaskList :tasks="tasks" />
+  <div
+    class="index"
+  >
+    <div
+      class="tasks"
+    >
+      <CreateTask />
+      <TaskList :tasks="tasks" />
+    </div>
+    <div
+      class="notes"
+    >
+      <h1>Notes</h1>
+    </div>
   </div>
 </template>
 

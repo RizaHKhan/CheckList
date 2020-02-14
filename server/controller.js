@@ -1,6 +1,4 @@
 const mongoose = require('mongoose')
-require('mongoose').set('debug', true)
-
 const Task = require('./Task')
 
 exports.getTasks = async (req, res) => {

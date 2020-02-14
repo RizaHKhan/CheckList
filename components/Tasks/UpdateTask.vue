@@ -1,9 +1,10 @@
 <template>
-  <div class="adjust">
+  <div class="update">
     <input
       v-model="newDesc"
       :placeholder="task.description"
       type="text"
+      class="input"
     >
     <ApproveUpdateButton
       v-on:approveUpdate="updateTask"
