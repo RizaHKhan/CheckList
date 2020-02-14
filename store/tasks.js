@@ -47,7 +47,6 @@ export const actions = {
     }
   },
   updateTask (ctx, task) {
-    console.log(task)
     try {
       axios.post('http://localhost:3000/crud/updateTask', { task })
       ctx.dispatch('getTasks')

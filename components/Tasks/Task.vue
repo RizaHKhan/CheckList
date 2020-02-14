@@ -8,23 +8,20 @@
     </h4>
     <UpdateTask
       v-else
-      :description="task.description"
+      :task="task"
     />
     <DeleteButton
       v-if="show"
       :id="task._id"
     />
     <UpdateButton
-      v-if="show"
       v-on:showInput="showInput"
+      v-if="show"
       :id="task._id"
     />
     <CancelUpdateButton
       v-if="!show"
       v-on:cancelUpdate="showInput"
-    />
-    <ApproveUpdateButton
-      v-if="!show"
     />
   </div>
 </template>
@@ -33,15 +30,14 @@
 import DeleteButton from '@/components/TaskButtons/DeleteButton'
 import UpdateButton from '@/components/TaskButtons/UpdateButton'
 import CancelUpdateButton from '@/components/TaskButtons/CancelUpdateButton'
-import ApproveUpdateButton from '@/components/TaskButtons/ApproveUpdateButton'
 import UpdateTask from '@/components/Tasks/UpdateTask'
+
 export default {
   components: {
     DeleteButton,
     UpdateButton,
     UpdateTask,
-    CancelUpdateButton,
-    ApproveUpdateButton
+    CancelUpdateButton
   },
   props: {
     task: {
