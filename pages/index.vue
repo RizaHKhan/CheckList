@@ -1,17 +1,22 @@
 <template>
   <div
-    class="index"
+    class="main-container--index"
   >
     <div
-      class="tasks"
+      class="main-container--index__tasks"
     >
       <CreateTask />
       <TaskList :tasks="tasks" />
     </div>
     <div
-      class="notes"
+      class="main-container--index__notes"
     >
       <h1>Notes</h1>
+    </div>
+    <div
+      class="main-container--index__archieve"
+    >
+      <h1>Archieve</h1>
     </div>
   </div>
 </template>
