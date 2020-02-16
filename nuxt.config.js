@@ -53,6 +53,7 @@ module.exports = {
   ** See https://axios.nuxtjs.org/options
   */
   axios: {
+    baseUrl: process.env.baseURL || "http://localhost:3000"
   },
   /*
   ** Build configuration

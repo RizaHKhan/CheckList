@@ -27,7 +27,7 @@ export const mutations = {
 export const actions = {
   async addTasks (ctx, payload) {
     try {
-      await axios.post('http://localhost:3000/crud/addTasks', { description: payload })
+      await axios.post('/crud/addTasks', { description: payload })
       ctx.dispatch('getTasks')
     } catch (err) {
       ctx.commit('errors', err)
@@ -36,7 +36,7 @@ export const actions = {
   async getTasks (ctx) {
     try {
       ctx.commit('getTasks', '')
-      const tasks = await axios.get('http://localhost:3000/crud/getTasks')
+      const tasks = await axios.get('/crud/getTasks')
       ctx.commit('getTasks', tasks.data)
     } catch (err) {
       ctx.commit('errors', err)
@@ -44,7 +44,7 @@ export const actions = {
   },
   async deleteTask (ctx, id) {
     try {
-      await axios.post('http://localhost:3000/crud/deleteTask', { id })
+      await axios.post('/crud/deleteTask', { id })
       ctx.dispatch('getTasks')
     } catch (err) {
       ctx.commit('errors', err)
@@ -52,7 +52,7 @@ export const actions = {
   },
   updateTask (ctx, task) {
     try {
-      axios.post('http://localhost:3000/crud/updateTask', { task })
+      axios.post('/crud/updateTask', { task })
       ctx.dispatch('getTasks')
     } catch (err) {
       ctx.commit('errors', err)
