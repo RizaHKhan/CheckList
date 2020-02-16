@@ -1,7 +1,10 @@
 const mongoose = require('mongoose')
 
 const TaskSchema = new mongoose.Schema({
-  description: String
+  description: {
+    type: String,
+    required: true
+  }
 },
 {
   timestamps: true
