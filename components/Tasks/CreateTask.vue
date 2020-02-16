@@ -19,13 +19,18 @@
 export default {
   data () {
     return {
-      task: ''
+      task: '',
+      error: ''
     }
   },
   methods: {
     addTaskMethod () {
-      this.$store.dispatch('tasks/addTasks', this.task)
-      this.task = ''
+      if (this.task) {
+        this.$store.dispatch('tasks/addTasks', this.task)
+        this.task = ''
+      } else {
+        this.error = 'Please enter a task'
+      }
     }
   }
 }
