@@ -37,6 +37,8 @@ module.exports = {
   */
   buildModules: [
     // Doc: https://github.com/nuxt-community/eslint-module
+  ],
+  devModules: [
     '@nuxtjs/eslint-module'
   ],
   /*
