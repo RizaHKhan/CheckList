@@ -1,8 +1,22 @@
-.main-container--header {
-  background: $dark;
+.main-container {
 
-  &__h1 {
-    font-weight: 300;
-    color: $white;
+  &--header {
+    background: $dark;
+    padding: 10px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    &__h1 {
+      font-weight: 300;
+      color: $white;
+    }
+
+    &__p {
+      color: $white;
+    }
+  }
+
+  &--nav {
+    
   }
 }

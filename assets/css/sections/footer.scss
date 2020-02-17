@@ -1,8 +1,15 @@
 .main-container--footer {
   background: $dark;
+  display: flex;
 
   &__h1 {
     color: $white;
     font-weight: 200;
+  }
+
+  &__p {
+
+    margin: auto;
+    color: $white;
   }
 }

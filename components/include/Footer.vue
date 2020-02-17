@@ -1,10 +1,10 @@
 <template>
   <div class="main-container--footer">
-    <h1
-      class="main-container--footer__h1"
+    <p
+      class="main-container--footer__p"
     >
-      Footer
-    </h1>
+      Checklist 2020
+    </p>
   </div>
 </template>
 
