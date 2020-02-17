@@ -50,12 +50,19 @@ export const actions = {
       ctx.commit('errors', err)
     }
   },
-  updateTask (ctx, task) {
+  async updateTask (ctx, task) {
     try {
-      axios.post('/crud/updateTask', { task })
+      await axios.post('/crud/updateTask', { task })
       ctx.dispatch('getTasks')
     } catch (err) {
       ctx.commit('errors', err)
+    }
+  }
+  async sendEmail(ctx, email) {
+    try {
+      await axios.post('/crud/sendEmail', email)
+    } catch (err) {
+      console.log(err)
     }
   }
 }

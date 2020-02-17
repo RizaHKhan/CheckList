@@ -4,6 +4,7 @@
         <input
             v-model="email"
             type="email"
+            class="input"
         >
         <button
             @click="sendEmail"
