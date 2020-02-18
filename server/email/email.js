@@ -14,6 +14,20 @@ const sendWelcomeEmail = (email, name) => {
   })
 }
 
+const sendAllTasks = (email, tasks) => {
+  sgMail.send({
+    to: email,
+    from: 'khanriza@gmail.com',
+    subject: 'List of All Tasks',
+    html:`
+      <h1>Tasks:</h1>
+      <ul>
+        ${tasks.map(task => `<li>${task.description}</li>`)}
+      </ul>
+    `
+  })
+}
+
 const purchaseEmail = (email, content) => {
   sgMail.send({
     to: email,
@@ -39,5 +53,6 @@ const purchaseEmail = (email, content) => {
 
 module.exports = {
   sendWelcomeEmail,
-  purchaseEmail
+  purchaseEmail,
+  sendAllTasks
 }

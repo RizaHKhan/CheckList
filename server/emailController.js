@@ -1,9 +1,12 @@
-const { sendWelcomeEmail } = require('./email/email')
+const { sendAllTasks } = require('./email/email')
+const Task = require('./Task')
 
 exports.sendEmail = async (req, res) => {
   try {
-    await sendWelcomeEmail('khanriza@gmail.com', 'Riza')
+    const tasks = await Task.find({})
+    await sendAllTasks(req.body.email, tasks)
+    res.send()
   } catch (err) {
-    console.log(err)
+    res.status(404).send(err)
   }
 }
