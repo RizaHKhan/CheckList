@@ -14,6 +14,8 @@ router.post('/updateTask', taskController.updateTask)
 router.post('/sendEmail', emailController.sendEmail)
 
 // Category Controllers
+router.get('/getCategories', categoryController.getCategories)
 router.post('/addCategory', categoryController.addCategory)
+router.post('/deleteCategory', categoryController.deleteCategory)
 
 module.exports = router

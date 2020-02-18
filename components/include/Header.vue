@@ -18,13 +18,13 @@
     <div class="main-container--nav">
       <nuxt-link
         to="/email"
-        class="button button--secondary"
+        class="button button--primary"
       >
         Email
       </nuxt-link>
       <nuxt-link
         to="/categories"
-        class="button button--secondary"
+        class="button button--primary"
       >
         Categories
       </nuxt-link>

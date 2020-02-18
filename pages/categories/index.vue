@@ -7,6 +7,7 @@
       <input
         v-model="category"
         type="text"
+        class="input"
       >
       <button
         @click="addCategory(category)"
@@ -14,14 +15,18 @@
       >
         Add category
       </button>
+      <CategoryList />
     </div>
   </div>
 </template>
 
 <script>
+import CategoryList from '@/components/Categories/CategoryList'
 import { mapActions } from 'vuex'
-
 export default {
+  components: {
+    CategoryList
+  },
   data () {
     return {
       category: ''
