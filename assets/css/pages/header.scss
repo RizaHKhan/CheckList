@@ -1,0 +1,34 @@
+.main-container {
+
+  &--header {
+    background: $dark;
+    padding: 10px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    &__title {
+
+      &__link {
+        text-decoration: none;
+
+        &__h1 {
+          color: white;
+          font-weight: 300;
+        }
+      }
+
+      &__p {
+        color: white;
+      }
+    }
+  }
+
+  &--nav {
+    margin-top: auto;
+    display: grid;
+    height: 30px;
+    justify-self: end;
+    grid-gap: 5px;
+    grid-auto-flow: column;
+  }
+}

@@ -1,13 +1,19 @@
-const controller = require('./controller')
-const emailController = require('./emailController')
+const taskController = require('./controllers/taskController')
+const emailController = require('./controllers/emailController')
+const categoryController = require('./controllers/categoryController')
 const express = require('express')
 const router = express.Router()
 
-router.get('/getTasks', controller.getTasks)
-router.post('/addTasks', controller.addTasks)
-router.post('/deleteTask', controller.deleteTask)
-router.post('/updateTask', controller.updateTask)
+// Task Controllers
+router.get('/getTasks', taskController.getTasks)
+router.post('/addTasks', taskController.addTasks)
+router.post('/deleteTask', taskController.deleteTask)
+router.post('/updateTask', taskController.updateTask)
 
+// Email Controllers
 router.post('/sendEmail', emailController.sendEmail)
+
+// Category Controllers
+router.post('/addCategory', categoryController.addCategory)
 
 module.exports = router

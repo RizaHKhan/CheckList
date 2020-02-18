@@ -60,7 +60,7 @@ export const actions = {
   },
   async sendEmail (ctx, email) {
     try {
-      await axios.post('/crud/sendEmail', {email})
+      await axios.post('/crud/sendEmail', { email })
     } catch (err) {
       console.log(err)
     }

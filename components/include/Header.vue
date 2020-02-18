@@ -1,12 +1,19 @@
 <template>
   <div class="main-container--header">
-    <div class="title">
-      <h1
-      class="main-container--header__h1"
+    <div class="main-container--header__title">
+      <nuxt-link
+        to="/"
+        class="main-container--header__title__link"
       >
-        CheckList
-      </h1>
-      <p class="main-container--header__p">The most effective productivity tool</p>
+        <h1
+          class="main-container--header__title__link__h1"
+        >
+          CheckList
+        </h1>
+      </nuxt-link>
+      <p class="main-container--header__title__p">
+        The most effective productivity tool
+      </p>
     </div>
     <div class="main-container--nav">
       <nuxt-link
@@ -15,11 +22,12 @@
       >
         Email
       </nuxt-link>
+      <nuxt-link
+        to="/categories"
+        class="button button--secondary"
+      >
+        Categories
+      </nuxt-link>
     </div>
   </div>
 </template>
-
-<script>
-export default {
-}
-</script>

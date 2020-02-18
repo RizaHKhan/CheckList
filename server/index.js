@@ -1,4 +1,4 @@
-require('dotenv').config({ path: __dirname + '/.env' })
+require('dotenv').config({ path: __dirname + '/config/.env' })
 const config = require('../nuxt.config.js')
 const router = require('./router')
 const cors = require('cors')

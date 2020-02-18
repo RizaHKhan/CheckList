@@ -1,4 +1,4 @@
-require('dotenv').config({ path: __dirname + '/.env' })
+require('dotenv').config({ path: __dirname + '/config/.env' })
 const sgMail = require('@sendgrid/mail')
 
 const sgAPI = process.env.sgAPI
@@ -20,9 +20,9 @@ const sendAllTasks = (email, tasks) => {
     from: 'khanriza@gmail.com',
     subject: 'List of All Tasks',
     html:`
-      <h1>Tasks:</h1>
+      <h1 style="color: red">Tasks:</h1>
       <ul>
-        ${tasks.map(task => `<li>${task.description}</li>`)}
+        ${tasks.map(task => `<li>${task.description}</li>`).join('')}
       </ul>
     `
   })

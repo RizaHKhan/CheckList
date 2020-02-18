@@ -1,5 +1,5 @@
-const { sendAllTasks } = require('./email/email')
-const Task = require('./Task')
+const { sendAllTasks } = require('../email/email')
+const Task = require('../models/Task')
 
 exports.sendEmail = async (req, res) => {
   try {
