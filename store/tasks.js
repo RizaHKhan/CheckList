@@ -57,8 +57,8 @@ export const actions = {
     } catch (err) {
       ctx.commit('errors', err)
     }
-  }
-  async sendEmail(ctx, email) {
+  },
+  async sendEmail (ctx, email) {
     try {
       await axios.post('/crud/sendEmail', email)
     } catch (err) {
