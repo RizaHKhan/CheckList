@@ -9,6 +9,9 @@ export const getters = {
 }
 
 export const mutations = {
+  emptyCategories (state) {
+    state.categories = []
+  },
   addCategory (state, category) {
     state.categories.push(category)
   },
@@ -31,6 +34,7 @@ export const actions = {
     }
   },
   async getCategories (ctx) {
+    ctx.commit('emptyCategories')
     try {
       const response = await axios.get('/crud/getCategories')
       Object.entries(response.data).forEach((category) => {

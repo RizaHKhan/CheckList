@@ -26,6 +26,11 @@
 <script>
 import { mapGetters, mapActions } from 'vuex'
 export default {
+  data () {
+    return {
+      show: false
+    }
+  },
   computed: {
     ...mapGetters({
       getCategories: 'category/getCategories'

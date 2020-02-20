@@ -15,7 +15,7 @@ exports.addTasks = async (req, res) => {
     const task = await Task.create(req.body)
     res.send(task)
   } catch (err) {
-    console.log(err)
+    res.send(err)
   }
 }
 
@@ -24,17 +24,16 @@ exports.deleteTask = async (req, res) => {
     await Task.deleteOne({ _id: req.body.id })
     res.send()
   } catch (err) {
-    console.log(err)
+    res.send(err)
   }
 }
 
 exports.updateTask = async (req, res) => {
-  console.log(req.body)
   try {
     const ObjectId = mongoose.Types.ObjectId(req.body.task._id)
     await Task.updateOne({ _id: ObjectId }, { description: req.body.task.description })
     res.send()
   } catch (err) {
-    console.log(err)
+    res.send(err)
   }
 }
