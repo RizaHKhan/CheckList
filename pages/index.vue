@@ -17,6 +17,11 @@
       class="main-container--index__archieve"
     >
       <h1>Archieve</h1>
+      <button
+        @click.prevent="logerror()"
+      >
+        Delete
+      </button>
     </div>
   </div>
 </template>
@@ -35,11 +40,23 @@ export default {
       tasks: 'tasks/getTasks'
     })
   },
+  methods: {
+    logerror () {
+      this.RandomError()
+    }
+  },
   created () {
     try {
       this.$store.dispatch('tasks/getTasks')
     } catch (err) {
       console.log(err)
+    }
+  },
+  notifications: {
+    RandomError: {
+      title: 'error',
+      message: 'some error',
+      type: 'error'
     }
   }
 }
