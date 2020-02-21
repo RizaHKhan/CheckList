@@ -29,7 +29,11 @@ export default {
         this.$store.dispatch('tasks/addTasks', this.task)
         this.task = ''
       } else {
-        this.error = 'Please enter a task'
+        this.$notify({
+          group: 'global',
+          title: 'Task cannot be blank',
+          type: 'warn'
+        })
       }
     }
   }
