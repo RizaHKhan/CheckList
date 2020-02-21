@@ -17,6 +17,11 @@
       class="main-container--index__archieve"
     >
       <h1>Archieve</h1>
+      <button
+        @click="showError"
+      >
+        Error
+      </button>
     </div>
   </div>
 </template>
@@ -40,6 +45,18 @@ export default {
       this.$store.dispatch('tasks/getTasks')
     } catch (err) {
       console.log(err)
+    }
+  },
+  methods: {
+    showError () {
+      this.showLoginErrors()
+    }
+  },
+  notifications: {
+    showLoginErrors: {
+      title: 'Login Failed',
+      message: 'Failed to authenticate',
+      type: 'error'
     }
   }
 }
