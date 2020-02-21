@@ -3,6 +3,7 @@
     <Header />
     <nuxt />
     <Footer />
+    <notifications group="global"/>
   </div>
 </template>
 
