@@ -2,7 +2,6 @@
   <div class="update">
     <input
       v-model="newDesc"
-      :placeholder="task.description"
       type="text"
       class="input"
     >
@@ -26,7 +25,7 @@ export default {
   },
   data () {
     return {
-      newDesc: ''
+      newDesc: this.task.description
     }
   },
   methods: {
