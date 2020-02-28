@@ -18,9 +18,15 @@
     >
       <h1>Archieve</h1>
       <button
+<<<<<<< HEAD
         @click.prevent="logerror()"
       >
         Delete
+=======
+        @click="showError"
+      >
+        Error
+>>>>>>> a1a74c62443c832db17af974b014ad568f7e6f82
       </button>
     </div>
   </div>
@@ -52,10 +58,22 @@ export default {
       console.log(err)
     }
   },
+<<<<<<< HEAD
   notifications: {
     RandomError: {
       title: 'error',
       message: 'some error',
+=======
+  methods: {
+    showError () {
+      this.showLoginErrors()
+    }
+  },
+  notifications: {
+    showLoginErrors: {
+      title: 'Login Failed',
+      message: 'Failed to authenticate',
+>>>>>>> a1a74c62443c832db17af974b014ad568f7e6f82
       type: 'error'
     }
   }
